@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMFRfFiEqf8cIGxJKb7WY5eifavrpEDSP8B6LUd")
+    format("truetype");
+  font-weight: 600; /* Semibold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMFwx0ZzbhgGs2K4YnX9oqT6c8ElmtUpbaOhyMz")
+    format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMFNDRXpcTXZ9ArVGEBMndUxP46hCtRpcHJ7y0s")
+    format("truetype");
+  font-weight: 300; /* Light */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMF5pbAtzGG3NCM9OqQxsXhkRi8S5gYIJbUr7L1")
+    format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMFh1X0nxJKsq8eaoU5XMAZ7PEcWyS61nj9RBI3")
+    format("truetype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-feature-settings: normal;
+  src: url("https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMFlZxGTd7XCv7wT3kJDa5MIjEqKpePxHOi6YWn")
+    format("truetype");
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+body {
+  font-family: "Source Sans 3", serif;
+  box-sizing: border-box;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-colorBg text-onBackground;
+  }
+}
+
+@layer components {
+  .scrollbar-hide::-webkit-scrollbar {
+    scrollbar-width: none;
+    display: none;
+  }
+  .drop-shadow-toast {
+    filter: drop-shadow(2px 3px 10px rgba(24, 23, 23, 0.32));
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
