@@ -281,6 +281,12 @@ const App = () => {
                 borderRadius="circle"
                 iconOnly
                 icon={<IconBrandGithub />}
+                onClick={() => {
+                  window.open(
+                    "https://github.com/DebanjanT/tailwind-polaris-dashboard",
+                    "_blank"
+                  );
+                }}
                 className="py-space-200"
               >
                 Github
