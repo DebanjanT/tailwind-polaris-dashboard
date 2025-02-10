@@ -259,7 +259,7 @@ const App = () => {
           </nav>
         </aside>
         {/* Main Content */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-grow flex flex-col pb-4">
           {/* Navbar */}
           <div className="bg-colorBgInverse backdrop-blur-sm h-[68px] px-6 flex items-center justify-between">
             <div className="flex justify-start items-center">
@@ -369,7 +369,7 @@ const App = () => {
           </div>
 
           {/* Content Section */}
-          <main className="flex-1 w-full pt-[50px] px-5 pb-3 container mx-auto overflow-y-auto">
+          <main className="flex-1 w-full pt-[50px] px-5 container mx-auto overflow-y-auto">
             <div className="max-w-5xl mx-auto space-y-8">
               <div className="flex flex-col gap-1 justify-start items-start w-full">
                 <p className="font-semibold text-md">
