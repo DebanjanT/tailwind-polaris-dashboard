@@ -127,7 +127,7 @@ const App = () => {
           <br />
           Use this template as a foundation to create a dashboard for your
           project utilizing
-          <code className="text-xs font-semibold">
+          <code className="text-sm ml-1 font-bold">
             @dtewary/tw-polaris v{version}
           </code>
           . You can enhance and customize it further to meet your specific

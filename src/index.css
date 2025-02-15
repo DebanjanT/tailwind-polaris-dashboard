@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://use.typekit.net/lbm4mpp.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: "Source Sans 3", serif;
+  font-family: "alibaba-sans", sans-serif;
   box-sizing: border-box;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
   scrollbar-width: none;
