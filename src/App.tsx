@@ -120,10 +120,12 @@ const App = () => {
           tone="success"
           title="Join Us Today!"
           extended={false}
-          icon={<IconTemplate className="w-5 h-5 flex-shrink-0 mx-4" />}
-          className="p-5"
+          icon={<IconTemplate className="w-8 h-8 flex-shrink-0 mx-4" />}
+          className="p-5 bg-gradient-to-br from-emerald-50 to-colorBgSurface"
         >
-          <strong>Dashboard Template</strong>
+          <strong className="text-colorStringSuccess">
+            Dashboard Template
+          </strong>
           <br />
           Use this template as a foundation to create a dashboard for your
           project utilizing
@@ -136,7 +138,7 @@ const App = () => {
         <div className="flex flex-col gap-1 justify-start items-start w-full">
           <p className="font-semibold text-md">What every plan gets you?</p>
           {/* Features Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full">
             {[
               {
                 icon: (
@@ -170,7 +172,7 @@ const App = () => {
                 <div className="p-2 bg-gradient-to-r from-colorBgFillMagic to-colorBgFillEmphasis rounded-border-radius-200 group-active:shadow-shadow-inset-200">
                   {item.icon}
                 </div>
-                <span className="text-sm font-medium text-onBackground">
+                <span className="text-xs md:text-[13px] font-medium text-onBackground">
                   {item.text}
                 </span>
               </div>

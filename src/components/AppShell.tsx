@@ -44,11 +44,14 @@ export default function AppShell({ children }: AppShellProps) {
       <div className="flex h-screen">
         {/* Sidebar (Desktop) */}
         <aside className="hidden lg:block w-64 bg-colorNavBg overflow-y-auto">
-          <div className="w-full bg-colorBgInverse py-5 px-5 mb-8 flex items-center gap-1">
-            <IconHome size={24} className="text-colorStringBrandOnBgFill" />
-            <p className="text-lg font-semibold text-colorStringBrandOnBgFill">
+          <div className="w-full bg-colorBgInverse py-5 px-5 mb-8 flex justify-center items-center gap-1">
+            {/* <p className="text-lg font-semibold text-colorStringBrandOnBgFill">
               Tailwind Polaris
-            </p>
+            </p> */}
+            <img
+              src="https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMFxBiV0PKq9KUlZvwTpbFeAXLJ73yDo2tHPcQS"
+              className="h-7 w-auto"
+            />
           </div>
           <nav className="px-3 space-y-1 border-r border-colorBorderInverse">
             <NavItem
@@ -109,7 +112,7 @@ export default function AppShell({ children }: AppShellProps) {
         <div className="flex-grow flex flex-col">
           {/* Navbar */}
           <div className="bg-colorBgInverse backdrop-blur-sm h-[68px] px-6 flex items-center justify-between">
-            <div className="flex items-center">
+            <div className="flex items-center justify-start">
               {/* Mobile Menu Button */}
               <Button
                 variantType="default"
@@ -119,9 +122,13 @@ export default function AppShell({ children }: AppShellProps) {
                 icon={<IconMenu2 />}
                 onClick={() => setIsSheetOpen(true)}
               />
-              <h1 className="text-lg font-semibold mx-3 text-colorStringBrandOnBgFill">
+              <h1 className="text-lg font-semibold mx-3 text-colorStringBrandOnBgFill hidden lg:block">
                 Dashboard
               </h1>
+              <img
+                src="https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMFxBiV0PKq9KUlZvwTpbFeAXLJ73yDo2tHPcQS"
+                className="h-7 w-auto inline-block lg:hidden mx-3"
+              />
             </div>
             <div className="flex items-center gap-1">
               <Tooltip content="GitHub Repository" asChild>
