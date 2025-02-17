@@ -1,4 +1,5 @@
-import { useState, useCallback, ReactNode } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useCallback, ReactNode, useEffect } from "react";
 import {
   NavItem,
   SubItem,
@@ -6,19 +7,33 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
+  Avatar,
+  AvatarFallback,
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuItem,
 } from "@dtewary/tw-polaris";
 import {
   IconHome,
   IconUsersGroup,
   IconZoomMoneyFilled,
   IconMenu2,
+  IconReportMoney,
+  IconUser,
 } from "@tabler/icons-react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { LogOut } from "lucide-react";
 
 interface AppShellProps {
   children: ReactNode;
 }
 
 export default function AppShell({ children }: AppShellProps) {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [openSection, setOpenSection] = useState<string | null>(null);
   const [activeItem, setActiveItem] = useState<{
     id: string;
@@ -37,6 +52,12 @@ export default function AppShell({ children }: AppShellProps) {
     },
     []
   );
+
+  useEffect(() => {
+    if (!searchParams.get("email")) {
+      navigate("/");
+    }
+  }, []);
 
   return (
     <>
@@ -129,7 +150,7 @@ export default function AppShell({ children }: AppShellProps) {
                 className="h-7 w-auto inline-block lg:hidden mx-3"
               />
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-3">
               <div
                 className="min-w-0 flex justify-center items-center gap-1 rounded-md bg-neutral-100/5 hover:bg-neutral-100/10 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-neutral-100/10 hover:outline-neutral-100/20 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white sm:text-sm/6 cursor-pointer"
                 onClick={() => {
@@ -142,6 +163,35 @@ export default function AppShell({ children }: AppShellProps) {
                 <IconHome className="w-5 h-5" strokeWidth={1.5} />
                 Github
               </div>
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Avatar indicator="online">
+                    <AvatarFallback className="bg-neutral-700 text-white">
+                      {searchParams.get("email")
+                        ? searchParams
+                            .get("email")!
+                            .substring(0, 2)
+                            .toLocaleUpperCase()
+                        : null}
+                    </AvatarFallback>
+                  </Avatar>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>
+                    {" "}
+                    <IconUser /> Profile
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <IconReportMoney /> Billing
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem onClick={() => navigate("/")}>
+                    <LogOut /> Logout
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
 

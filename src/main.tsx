@@ -1,13 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.tsx";
 import { ToastProvider } from "@dtewary/tw-polaris";
+import { BrowserRouter } from "react-router-dom";
+import MainRoutes from "./routes.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ToastProvider position="bottom-right">
-      <App />
-    </ToastProvider>
+    <BrowserRouter>
+      <ToastProvider position="bottom-right">
+        <MainRoutes />
+      </ToastProvider>
+    </BrowserRouter>
   </StrictMode>
 );
