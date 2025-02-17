@@ -52,7 +52,7 @@ export default function AppShell({ children }: AppShellProps) {
               className="h-7 w-auto"
             />
           </div>
-          <nav className="px-3 space-y-1 border-r border-colorBorderInverse">
+          <nav className="px-3 space-y-1 border-r border-neutral-500">
             <NavItem
               label="Marketing"
               icon={<IconUsersGroup />}
@@ -156,7 +156,7 @@ export default function AppShell({ children }: AppShellProps) {
       <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
         <SheetContent className="p-0">
           <SheetHeader>
-            <div className="w-full bg-colorBgInverse py-3 px-5 mb-8 mt-2 flex items-center gap-1 rounded-border-radius-full">
+            <div className="w-full bg-neutral-800 py-3 px-5 mb-8 mt-2 flex items-center gap-1 rounded-border-radius-full">
               <IconHome size={24} className="text-colorStringBrandOnBgFill" />
               <p className="text-base font-semibold text-colorStringBrandOnBgFill">
                 Tailwind Polaris

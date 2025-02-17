@@ -18,7 +18,6 @@ import {
   IconGrid3x3,
   IconShoppingCart,
   IconSparkles,
-  IconTemplate,
 } from "@tabler/icons-react";
 import AppShell from "./components/AppShell";
 
@@ -116,23 +115,21 @@ const App = () => {
   return (
     <AppShell>
       <div className="max-w-5xl mx-auto">
-        <Banner
-          tone="warning"
-          title="Join Us Today!"
-          extended={false}
-          icon={<IconTemplate className="w-8 h-8 flex-shrink-0 mx-4" />}
-          className=" bg-amber-100 hover:bg-yellow-100 shadow-none drop-shadow-none sm:drop-shadow-none rounded-md sm:rounded-md"
-        >
-          <strong className="text-base">Dashboard Template</strong>
+        <div className=" p-6  text-sm border-amber-800 bg-amber-200 hover:bg-amber-200 shadow-none drop-shadow-none sm:drop-shadow-none rounded-md sm:rounded-md">
+          <strong className="text-base text-amber-900">
+            Dashboard Template
+          </strong>
           <br />
-          Use this template as a foundation to create a dashboard for your
-          project utilizing
-          <code className="text-sm ml-1 font-bold">
-            @dtewary/tw-polaris v{version}
-          </code>
-          . You can enhance and customize it further to meet your specific
-          requirements.
-        </Banner>
+          <div>
+            Use this template as a foundation to create a dashboard for your
+            project utilizing
+            <code className="text-xs ml-1 font-bold text-sky-900 border-b border-b-amber-800 border-dotted">
+              @dtewary/tw-polaris v{version}
+            </code>
+            . You can enhance and customize it further to meet your specific
+            requirements.
+          </div>
+        </div>
         <div className="flex flex-col gap-1 justify-start items-start w-full mb-2 mt-8">
           <p className="font-semibold text-md">What every plan gets you?</p>
           {/* Features Section */}
@@ -205,10 +202,12 @@ const App = () => {
                   </span>
                 </div>
                 <button
-                  className="px-4 py-3 text-sm font-semibold my-2 rounded-lg bg-gradient-to-b from-neutral-800 to-neutral-700 border border-b-neutral-900 border-l-neutral-800 border-r-neutral-800 border-t-neutral-700 text-neutral-100 shadow-shadow-bevel-100  active:bg-neutral-900 transition w-full"
+                  className="group px-4 py-3 text-sm font-semibold my-2 rounded-lg bg-gradient-to-b from-neutral-800 to-neutral-800/85 hover:from-neutral-900 hover:to-neutral-900/85 border  border-neutral-900  text-neutral-100 shadow-shadow-bevel-100  active:shadow-shadow-button-primary-inset transition w-full drop-shadow"
                   onClick={plan.buttonClick}
                 >
-                  {plan.buttonText}
+                  <p className="group-active:translate-y-[1.5px]">
+                    {plan.buttonText}
+                  </p>{" "}
                 </button>
 
                 {plan.banner && (
@@ -258,7 +257,7 @@ const App = () => {
                     required
                     placeholder="Enter your email"
                     autoComplete="email"
-                    className="min-w-0 flex-auto rounded-md bg-neutral-500/5 px-3.5 py-2 text-base text-white  outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 outline-dashed focus:outline-white sm:text-sm/6"
+                    className="min-w-0 flex-auto rounded-md bg-neutral-500/5 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-neutral-50/10 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white sm:text-sm/6"
                   />
                   <Button type="submit" className="py-space-200">
                     Notify me

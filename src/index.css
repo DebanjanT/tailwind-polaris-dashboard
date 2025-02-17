@@ -15,7 +15,7 @@ body {
 
 @layer base {
   body {
-    @apply antialiased bg-neutral-100 text-onBackground;
+    @apply antialiased bg-neutral-50 text-onBackground;
   }
 }
 
