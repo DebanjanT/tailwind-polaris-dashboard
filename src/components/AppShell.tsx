@@ -6,7 +6,6 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
-  Tooltip,
 } from "@dtewary/tw-polaris";
 import {
   IconHome,
@@ -43,8 +42,8 @@ export default function AppShell({ children }: AppShellProps) {
     <>
       <div className="flex h-screen">
         {/* Sidebar (Desktop) */}
-        <aside className="hidden lg:block w-64 bg-colorNavBg overflow-y-auto">
-          <div className="w-full bg-colorBgInverse py-5 px-5 mb-8 flex justify-center items-center gap-1">
+        <aside className="hidden lg:block w-64 bg-neutral-200 overflow-y-auto">
+          <div className="w-full bg-neutral-900 py-5 px-5 mb-9 flex justify-center items-center gap-1">
             {/* <p className="text-lg font-semibold text-colorStringBrandOnBgFill">
               Tailwind Polaris
             </p> */}
@@ -111,7 +110,7 @@ export default function AppShell({ children }: AppShellProps) {
         {/* Main Content Area */}
         <div className="flex-grow flex flex-col">
           {/* Navbar */}
-          <div className="bg-colorBgInverse backdrop-blur-sm h-[68px] px-6 flex items-center justify-between">
+          <div className="bg-neutral-900 backdrop-blur-sm h-[68px] px-6 flex items-center justify-between">
             <div className="flex items-center justify-start">
               {/* Mobile Menu Button */}
               <Button
@@ -122,7 +121,7 @@ export default function AppShell({ children }: AppShellProps) {
                 icon={<IconMenu2 />}
                 onClick={() => setIsSheetOpen(true)}
               />
-              <h1 className="text-lg font-semibold mx-3 text-colorStringBrandOnBgFill hidden lg:block">
+              <h1 className="font-kalvika text-xl font-semibold mx-3 text-colorStringBrandOnBgFill hidden lg:block">
                 Dashboard
               </h1>
               <img
@@ -131,25 +130,23 @@ export default function AppShell({ children }: AppShellProps) {
               />
             </div>
             <div className="flex items-center gap-1">
-              <Tooltip content="GitHub Repository" asChild>
-                <Button
-                  variantType="primary"
-                  icon={<IconHome />}
-                  onClick={() => {
-                    window.open(
-                      "https://github.com/DebanjanT/tailwind-polaris-dashboard",
-                      "_blank"
-                    );
-                  }}
-                >
-                  Github
-                </Button>
-              </Tooltip>
+              <div
+                className="min-w-0 flex justify-center items-center gap-1 rounded-md bg-neutral-100/5 hover:bg-neutral-100/10 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-neutral-100/10 hover:outline-neutral-100/20 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white sm:text-sm/6 cursor-pointer"
+                onClick={() => {
+                  window.open(
+                    "https://github.com/DebanjanT/tailwind-polaris-dashboard",
+                    "_blank"
+                  );
+                }}
+              >
+                <IconHome className="w-5 h-5" strokeWidth={1.5} />
+                Github
+              </div>
             </div>
           </div>
 
           {/* Scrollable Content */}
-          <main className="flex-1 w-full pt-[50px] px-5 pb-6 container mx-auto overflow-y-auto">
+          <main className="flex-1 w-full pt-[50px] px-5 container mx-auto overflow-y-auto">
             {children}
           </main>
         </div>

@@ -115,17 +115,15 @@ const App = () => {
 
   return (
     <AppShell>
-      <div className="max-w-5xl mx-auto space-y-8">
+      <div className="max-w-5xl mx-auto">
         <Banner
-          tone="success"
+          tone="warning"
           title="Join Us Today!"
           extended={false}
           icon={<IconTemplate className="w-8 h-8 flex-shrink-0 mx-4" />}
-          className="p-5 bg-gradient-to-br from-emerald-50 to-colorBgSurface"
+          className=" bg-amber-100 hover:bg-yellow-100 shadow-none drop-shadow-none sm:drop-shadow-none rounded-md sm:rounded-md"
         >
-          <strong className="text-colorStringSuccess">
-            Dashboard Template
-          </strong>
+          <strong className="text-base">Dashboard Template</strong>
           <br />
           Use this template as a foundation to create a dashboard for your
           project utilizing
@@ -135,7 +133,7 @@ const App = () => {
           . You can enhance and customize it further to meet your specific
           requirements.
         </Banner>
-        <div className="flex flex-col gap-1 justify-start items-start w-full">
+        <div className="flex flex-col gap-1 justify-start items-start w-full mb-2 mt-8">
           <p className="font-semibold text-md">What every plan gets you?</p>
           {/* Features Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full">
@@ -167,12 +165,12 @@ const App = () => {
             ].map((item, index) => (
               <div
                 key={index}
-                className="group cursor-pointer flex flex-col items-start sm:flex-row sm:items-center gap-3 p-3 bg-colorBgSurface hover:bg-colorBgSurfaceHover border border-colorBorder rounded-border-radius-300 shadow-shadow-200 active:shadow-shadow-button-inset active:translate-y-1 transition-transform duration-75"
+                className="group cursor-pointer flex flex-col items-start sm:flex-row sm:items-center gap-3 p-3 bg-colorBgSurface hover:bg-gradient-to-r hover:from-gray-100 hover:to-white group  border border-colorBorder rounded-md active:shadow-shadow-button-inset active:translate-y-1 transition-all duration-100"
               >
-                <div className="p-2 bg-gradient-to-r from-colorBgFillMagic to-colorBgFillEmphasis rounded-border-radius-200 group-active:shadow-shadow-inset-200">
+                <div className="p-2 bg-gradient-to-r from-colorBgFillMagic to-colorBgFillEmphasis rounded-md group-active:rounded-xl group-active:shadow-shadow-inset-200 transition-all">
                   {item.icon}
                 </div>
-                <span className="text-xs md:text-[13px] font-medium text-onBackground">
+                <span className="text-sm md:text-md font-semibold text-onBackground ">
                   {item.text}
                 </span>
               </div>
@@ -181,14 +179,11 @@ const App = () => {
         </div>
 
         {/* Pricing Plans */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-8">
           {plans.map((plan, index) => (
-            <Card
-              key={index}
-              className="p-8 rounded-border-radius-400 shadow-shadow-300"
-            >
+            <Card key={index} className="p-4 shadow-shadow-300 rounded-md">
               <CardHeader>
-                <CardTitle className="text-font-size-750 font-semibold">
+                <CardTitle className="text-font-size-750 font-semibold text-3xl">
                   {plan.title}
                 </CardTitle>
                 <p className="text-font-size-350 text-colorStringSecondary">
@@ -209,13 +204,12 @@ const App = () => {
                     INR/month for first month
                   </span>
                 </div>
-                <Button
-                  className="w-full mt-4 py-space-300"
-                  variantType="primary"
+                <button
+                  className="px-4 py-3 text-sm font-semibold my-2 rounded-lg bg-gradient-to-b from-neutral-800 to-neutral-700 border border-b-neutral-900 border-l-neutral-800 border-r-neutral-800 border-t-neutral-700 text-neutral-100 shadow-shadow-bevel-100  active:bg-neutral-900 transition w-full"
                   onClick={plan.buttonClick}
                 >
                   {plan.buttonText}
-                </Button>
+                </button>
 
                 {plan.banner && (
                   <Banner
@@ -244,6 +238,71 @@ const App = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        <div className="pb-6">
+          <div className="">
+            <div className="relative isolate flex flex-col gap-10 overflow-hidden bg-neutral-900  px-12 py-12 shadow-2xl rounded-md sm:px-24 xl:flex-row xl:items-center xl:py-20">
+              <h2 className="max-w-xl text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl xl:flex-auto">
+                Want our product updates? Sign up for our newsletter.
+              </h2>
+              <form className="w-full max-w-md">
+                <div className="flex flex-col md:flex-row gap-y-3 gap-x-4">
+                  <label htmlFor="email-address" className="sr-only">
+                    Email address
+                  </label>
+                  <input
+                    id="email-address"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="Enter your email"
+                    autoComplete="email"
+                    className="min-w-0 flex-auto rounded-md bg-neutral-500/5 px-3.5 py-2 text-base text-white  outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 outline-dashed focus:outline-white sm:text-sm/6"
+                  />
+                  <Button type="submit" className="py-space-200">
+                    Notify me
+                  </Button>
+                </div>
+                <p className="mt-4 text-sm/6 text-gray-300">
+                  We care about your data. Read our{" "}
+                  <a
+                    href="#"
+                    className="font-semibold text-yellow-400 hover:underline"
+                  >
+                    privacy&nbsp;policy
+                  </a>
+                  .
+                </p>
+              </form>
+              <svg
+                viewBox="0 0 1024 1024"
+                aria-hidden="true"
+                className="absolute left-1/2 top-1/2 -z-10 size-[64rem] -translate-x-1/2"
+              >
+                <circle
+                  r={512}
+                  cx={512}
+                  cy={512}
+                  fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
+                  fillOpacity="0.7"
+                />
+                <defs>
+                  <radialGradient
+                    r={1}
+                    cx={0}
+                    cy={0}
+                    id="759c1415-0410-454c-8f7c-9a820de03641"
+                    gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(512 512) rotate(90) scale(512)"
+                  >
+                    <stop stopColor="#7775D6" />
+                    <stop offset={1} stopColor="#E935C1" stopOpacity={0} />
+                  </radialGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </AppShell>
