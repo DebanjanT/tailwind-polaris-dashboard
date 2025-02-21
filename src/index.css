@@ -83,3 +83,14 @@ input[type="number"] {
       transparent 100%
     ), linear-gradient(135deg, rgb(137, 27, 63), rgb(197, 90, 122));
 }
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: .7;
+    transform: scale(0.95);
+  }
+}

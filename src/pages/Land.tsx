@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import { BorderTrail } from "../components/BorderTrail";
 
 const routes = [
   { path: "/login", name: "Login Form 1" },
@@ -12,8 +13,10 @@ const routes = [
 
 export default function BlogPage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="bg-white w-full md:w-[600px] p-4 rounded-lg shadow-md">
+    <div className="flex flex-col items-center justify-center min-h-screen grad-bg p-4">
+      <div className="bg-white w-full md:w-[600px] p-4 rounded-lg shadow-md relative">
+        <BorderTrail className="bg-[#a3365a]" size={200} />
+
         <img
           src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-brand-logo.png"
           alt="logo"
@@ -22,6 +25,7 @@ export default function BlogPage() {
         <h2 className="text-base font-semibold text-gray-900 mb-3">
           Available Component Routes
         </h2>
+
         <div className="border rounded-md overflow-hidden">
           {routes.map((route) => (
             <Link

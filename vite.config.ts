@@ -11,6 +11,7 @@ export default defineConfig({
         manualChunks: {
           'vendor': ['react', 'react-dom', 'react-router-dom'],
           'ui-components': ['@dtewary/tw-polaris'],
+          'ui-motion':['motion'],
           'forms': [
             './src/components/ui/LoginForm',
             './src/components/ui/AtmLocatorForm',

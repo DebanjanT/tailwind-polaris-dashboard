@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import DTBLoader from "./components/ui/DTBLoader";
 
 // Lazy load components
 const Login = lazy(() => import("./pages/auth/Login"));
@@ -11,7 +12,11 @@ const InvoiceList = lazy(() => import("./components/ui/InvoiceList"));
 const BlogPage = lazy(() => import("./pages/Land"));
 
 // Loading component
-const LoadingFallback = () => <div className="flex items-center justify-center min-h-screen">Loading...</div>;
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <DTBLoader size="lg" />
+  </div>
+);
 
 const MainRoutes = () => {
   return (

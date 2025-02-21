@@ -50,11 +50,11 @@ const Login = () => {
     }
   };
   return (
-    <div className="grid place-items-center min-h-screen grad-bg p-2">
+    <div className="grid place-items-center min-h-screen bg-gray-100 p-2">
       <div className="max-w-md mx-auto mt-10">
         <Link
           to="/"
-          className="block text-white text-xs mt-3 font-semibold hover:underline mb-3"
+          className="block text-[#891B3F] text-xs mt-3 font-semibold hover:underline mb-3"
         >
           ← Back to Home
         </Link>
@@ -64,7 +64,7 @@ const Login = () => {
               <img
                 src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-brand-logo.png"
                 alt="logo"
-                className="w-28 md:w-32 h-auto"
+                className="w-24 h-auto"
               />
             </CardTitle>
             <CardDescription>
@@ -81,7 +81,7 @@ const Login = () => {
                 label="Email Address"
                 name="email"
                 type="email"
-                className="rounded-md"
+                className="rounded sm:rounded"
                 placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
@@ -91,7 +91,7 @@ const Login = () => {
                 label="Password"
                 name="password"
                 type="password"
-                className="rounded-md"
+                className=" rounded sm:rounded"
                 placeholder="Create a password"
                 value={formData.password}
                 onChange={handleChange}
@@ -103,7 +103,7 @@ const Login = () => {
                 style={{
                   marginTop: "1.5rem",
                 }}
-                className="flex justify-center items-center font-semibold bg-[#97144d] hover:bg-[#96294e] shadow-inner text-white w-full rounded py-3 px-3 my-3"
+                className="flex justify-center items-center font-semibold bg-[#97144d] hover:bg-[#96294e] shadow-inner text-white w-full rounded py-2 px-3 my-3"
                 type="submit"
               >
                 <InspectIcon className="w-5 h-5 mr-2" /> Log In
