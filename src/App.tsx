@@ -161,8 +161,8 @@ const App = () => {
               },
             ].map((item, index) => (
               <div
-                key={index}
-                className="group cursor-pointer flex flex-col items-start sm:flex-row sm:items-center gap-3 p-3 bg-colorBgSurface hover:bg-gradient-to-r hover:from-gray-100 hover:to-white group  border border-colorBorder rounded-md active:shadow-shadow-button-inset active:translate-y-1 transition-all duration-100"
+                key={item.text}
+                className="group cursor-pointer flex flex-col items-start sm:flex-row sm:items-center gap-3 p-3 bg-colorBgSurface hover:bg-indigo-50 group  border border-colorBorder rounded-md active:shadow-shadow-button-inset active:translate-y-1 transition-all duration-100"
               >
                 <div className="p-2 bg-gradient-to-r from-colorBgFillMagic to-colorBgFillEmphasis rounded-md group-active:rounded-xl group-active:shadow-shadow-inset-200 transition-all">
                   {item.icon}
@@ -178,9 +178,9 @@ const App = () => {
         {/* Pricing Plans */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-8">
           {plans.map((plan, index) => (
-            <Card key={index} className="p-4 shadow-shadow-300 rounded-md">
+            <Card key={plan.title} className="p-4 shadow-shadow-300 rounded-md">
               <CardHeader>
-                <CardTitle className="text-font-size-750 font-semibold text-3xl">
+                <CardTitle className="text-font-size-750 font-bold text-3xl text-indigo-600">
                   {plan.title}
                 </CardTitle>
                 <p className="text-font-size-350 text-colorStringSecondary">
@@ -202,6 +202,7 @@ const App = () => {
                   </span>
                 </div>
                 <button
+                type="button"
                   className="group px-4 py-3 text-sm font-semibold my-2 rounded-lg bg-gradient-to-b from-neutral-800 to-neutral-800/85 hover:from-neutral-900 hover:to-neutral-900/85 border  border-neutral-900  text-neutral-100 shadow-shadow-bevel-100  active:shadow-shadow-button-primary-inset transition w-full drop-shadow"
                   onClick={plan.buttonClick}
                 >
@@ -226,7 +227,7 @@ const App = () => {
                 {/* Feature List */}
                 <div className="mt-4 p-3 bg-colorBgSurfaceSecondary rounded-border-radius-300">
                   {plan.features.map((feature, i) => (
-                    <div key={i} className="flex items-center gap-3 py-2">
+                    <div key={feature.text} className="flex items-center gap-3 py-2">
                       {feature.icon}
                       <span className="text-sm text-onBackground">
                         {feature.text}
@@ -266,7 +267,7 @@ const App = () => {
                 <p className="mt-4 text-sm/6 text-gray-300">
                   We care about your data. Read our{" "}
                   <a
-                    href="#"
+                    href="www.google.com"
                     className="font-semibold text-yellow-400 hover:underline"
                   >
                     privacy&nbsp;policy

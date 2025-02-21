@@ -24,7 +24,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -34,6 +34,7 @@ const Login = () => {
       [e.target.name]: "",
     });
   };
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const newErrors = {
@@ -113,10 +114,10 @@ const Login = () => {
             </div>
           </CardContent>
           <CardFooter className="flex justify-between text-sm">
-            <a href="#" className="text-colorStringLink hover:underline">
+            <a href="www.google.com" className="text-colorStringLink hover:underline">
               Not registered? Sign up
             </a>
-            <a href="#" className="text-colorStringLink hover:underline">
+            <a href="www.google.com" className="text-colorStringLink hover:underline">
               Forgot password?
             </a>
           </CardFooter>

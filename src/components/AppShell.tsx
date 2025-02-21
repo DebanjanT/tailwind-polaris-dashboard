@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useCallback, ReactNode, useEffect } from "react";
+import { useState, useCallback, type ReactNode, useEffect } from "react";
 import {
   NavItem,
   SubItem,
@@ -53,6 +53,7 @@ export default function AppShell({ children }: AppShellProps) {
     []
   );
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (!searchParams.get("email")) {
       navigate("/");
@@ -63,12 +64,13 @@ export default function AppShell({ children }: AppShellProps) {
     <>
       <div className="flex h-screen">
         {/* Sidebar (Desktop) */}
-        <aside className="hidden lg:block w-64 bg-neutral-200 overflow-y-auto">
-          <div className="w-full bg-neutral-900 py-5 px-5 mb-9 flex justify-center items-center gap-1">
+        <aside className="hidden lg:block w-64 bg-slate-300/55 overflow-y-auto">
+          <div className="w-full bg-indigo-700 py-5 px-5 mb-9 flex justify-center items-center gap-1">
             {/* <p className="text-lg font-semibold text-colorStringBrandOnBgFill">
               Tailwind Polaris
             </p> */}
             <img
+            alt="Logo"
               src="https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMFxBiV0PKq9KUlZvwTpbFeAXLJ73yDo2tHPcQS"
               className="h-7 w-auto"
             />
@@ -131,7 +133,7 @@ export default function AppShell({ children }: AppShellProps) {
         {/* Main Content Area */}
         <div className="flex-grow flex flex-col">
           {/* Navbar */}
-          <div className="bg-neutral-900 backdrop-blur-sm h-[68px] px-6 flex items-center justify-between">
+          <div className="bg-indigo-800 backdrop-blur-sm h-[68px] px-6 flex items-center justify-between">
             <div className="flex items-center justify-start">
               {/* Mobile Menu Button */}
               <Button
@@ -146,11 +148,13 @@ export default function AppShell({ children }: AppShellProps) {
                 Dashboard
               </h1>
               <img
+              alt="Logo"
                 src="https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMFxBiV0PKq9KUlZvwTpbFeAXLJ73yDo2tHPcQS"
                 className="h-7 w-auto inline-block lg:hidden mx-3"
               />
             </div>
             <div className="flex items-center gap-3">
+              {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
               <div
                 className="min-w-0 flex justify-center items-center gap-1 rounded-md bg-neutral-100/5 hover:bg-neutral-100/10 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-neutral-100/10 hover:outline-neutral-100/20 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white sm:text-sm/6 cursor-pointer"
                 onClick={() => {
@@ -169,8 +173,7 @@ export default function AppShell({ children }: AppShellProps) {
                     <AvatarFallback className="bg-neutral-700 text-white">
                       {searchParams.get("email")
                         ? searchParams
-                            .get("email")!
-                            .substring(0, 2)
+                            .get("email")?.substring(0, 2)
                             .toLocaleUpperCase()
                         : null}
                     </AvatarFallback>
@@ -204,9 +207,9 @@ export default function AppShell({ children }: AppShellProps) {
 
       {/* Sidebar Sheet for Mobile */}
       <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-        <SheetContent className="p-0">
+        <SheetContent className="p-0 bg-neutral-200">
           <SheetHeader>
-            <div className="w-full bg-neutral-800 py-3 px-5 mb-8 mt-2 flex items-center gap-1 rounded-border-radius-full">
+            <div className="w-full bg-indigo-800 py-3 px-5 mb-8 mt-2 flex items-center gap-1 rounded-border-radius-full">
               <IconHome size={24} className="text-colorStringBrandOnBgFill" />
               <p className="text-base font-semibold text-colorStringBrandOnBgFill">
                 Tailwind Polaris
