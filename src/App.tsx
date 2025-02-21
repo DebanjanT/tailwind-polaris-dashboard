@@ -159,7 +159,7 @@ const App = () => {
                 ),
                 text: "In-depth analytics",
               },
-            ].map((item, index) => (
+            ].map((item) => (
               <div
                 key={item.text}
                 className="group cursor-pointer flex flex-col items-start sm:flex-row sm:items-center gap-3 p-3 bg-colorBgSurface hover:bg-indigo-50 group  border border-colorBorder rounded-md active:shadow-shadow-button-inset active:translate-y-1 transition-all duration-100"
@@ -177,7 +177,7 @@ const App = () => {
 
         {/* Pricing Plans */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-8">
-          {plans.map((plan, index) => (
+          {plans.map((plan) => (
             <Card key={plan.title} className="p-4 shadow-shadow-300 rounded-md">
               <CardHeader>
                 <CardTitle className="text-font-size-750 font-bold text-3xl text-indigo-600">
@@ -226,7 +226,7 @@ const App = () => {
 
                 {/* Feature List */}
                 <div className="mt-4 p-3 bg-colorBgSurfaceSecondary rounded-border-radius-300">
-                  {plan.features.map((feature, i) => (
+                  {plan.features.map((feature) => (
                     <div key={feature.text} className="flex items-center gap-3 py-2">
                       {feature.icon}
                       <span className="text-sm text-onBackground">
