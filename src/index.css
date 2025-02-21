@@ -5,42 +5,42 @@
 @tailwind utilities;
 
 body {
-  font-family: "proxima-nova", sans-serif;
-  box-sizing: border-box;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  scrollbar-width: none;
+	font-family: "proxima-nova", sans-serif;
+	box-sizing: border-box;
+	line-height: 1.6;
+	margin: 0;
+	padding: 0;
+	scrollbar-width: none;
 }
 
 @layer base {
-  body {
-    @apply antialiased bg-neutral-50 text-onBackground;
-  }
+	body {
+		@apply antialiased bg-indigo-50/30 text-onBackground;
+	}
 }
 
 @layer components {
-  .scrollbar-hide::-webkit-scrollbar {
-    scrollbar-width: none;
-    display: none;
-  }
-  .drop-shadow-toast {
-    filter: drop-shadow(2px 3px 10px rgba(24, 23, 23, 0.32));
-  }
+	.scrollbar-hide::-webkit-scrollbar {
+		scrollbar-width: none;
+		display: none;
+	}
+	.drop-shadow-toast {
+		filter: drop-shadow(2px 3px 10px rgba(24, 23, 23, 0.32));
+	}
 
-  .font-kalvika {
-    font-family: "kalvika", sans-serif;
-  }
+	.font-kalvika {
+		font-family: "kalvika", sans-serif;
+	}
 }
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 /* Firefox */
 input[type="number"] {
-  -moz-appearance: textfield;
+	-moz-appearance: textfield;
 }
