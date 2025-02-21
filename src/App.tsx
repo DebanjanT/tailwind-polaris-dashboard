@@ -6,7 +6,6 @@ import {
   CardTitle,
   CardContent,
   Banner,
-  version,
 } from "@dtewary/tw-polaris";
 import {
   IconBasket,
