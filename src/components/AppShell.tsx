@@ -64,16 +64,11 @@ export default function AppShell({ children }: AppShellProps) {
     <>
       <div className="flex h-screen">
         {/* Sidebar (Desktop) */}
-        <aside className="hidden lg:block w-64 bg-slate-300/55 overflow-y-auto">
-          <div className="w-full bg-indigo-700 py-5 px-5 mb-9 flex justify-center items-center gap-1">
-            {/* <p className="text-lg font-semibold text-colorStringBrandOnBgFill">
-              Tailwind Polaris
-            </p> */}
-            <img
-            alt="Logo"
-              src="https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMFxBiV0PKq9KUlZvwTpbFeAXLJ73yDo2tHPcQS"
-              className="h-7 w-auto"
-            />
+        <aside className="hidden lg:block w-64 bg-[#891B3F]/10 overflow-y-auto">
+          <div className="w-full bg-[#891B3F] py-5 px-5 mb-9 flex justify-center items-center gap-1">
+            
+            <img src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-white-logo.png" alt="logo" className="w-[6.6rem] h-auto"/>
+
           </div>
           <nav className="px-3 space-y-1 border-r border-neutral-500">
             <NavItem
@@ -133,7 +128,7 @@ export default function AppShell({ children }: AppShellProps) {
         {/* Main Content Area */}
         <div className="flex-grow flex flex-col">
           {/* Navbar */}
-          <div className="bg-indigo-800 backdrop-blur-sm h-[68px] px-6 flex items-center justify-between">
+          <div className="bg-[#891B3F] lg:bg-white shadow-shadow-400 backdrop-blur-sm h-[68px] px-6 flex items-center justify-between">
             <div className="flex items-center justify-start">
               {/* Mobile Menu Button */}
               <Button
@@ -144,19 +139,16 @@ export default function AppShell({ children }: AppShellProps) {
                 icon={<IconMenu2 />}
                 onClick={() => setIsSheetOpen(true)}
               />
-              <h1 className="font-kalvika text-xl font-semibold mx-3 text-colorStringBrandOnBgFill hidden lg:block">
+              <h1 className="text-xl font-bold mx-3 text-[#891B3F] hidden lg:block">
                 Dashboard
               </h1>
-              <img
-              alt="Logo"
-                src="https://swxgywj0g4.ufs.sh/f/91ssUGeq7QMFxBiV0PKq9KUlZvwTpbFeAXLJ73yDo2tHPcQS"
-                className="h-7 w-auto inline-block lg:hidden mx-3"
-              />
+              <img src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-white-logo.png" alt="logo" className="w-[6.6rem] h-auto ml-2 lg:hidden"/>
+
             </div>
             <div className="flex items-center gap-3">
               {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
               <div
-                className="min-w-0 flex justify-center items-center gap-1 rounded-md bg-neutral-100/5 hover:bg-neutral-100/10 px-3.5 py-2 text-base text-white outline outline-1 -outline-offset-1 outline-neutral-100/10 hover:outline-neutral-100/20 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white sm:text-sm/6 cursor-pointer"
+                className="min-w-0 flex justify-center items-center gap-1 rounded-md font-semibold hover:bg-[#891B3F]/10 border border-[#891B3F]  px-3.5 py-2 text-base text-[#891B3F] outline outline-1 -outline-offset-1 outline-neutral-100/10 hover:outline-neutral-100/20 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-white sm:text-sm/6 cursor-pointer"
                 onClick={() => {
                   window.open(
                     "https://github.com/DebanjanT/tailwind-polaris-dashboard",
@@ -209,7 +201,7 @@ export default function AppShell({ children }: AppShellProps) {
       <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
         <SheetContent className="p-0 bg-neutral-200">
           <SheetHeader>
-            <div className="w-full bg-indigo-800 py-3 px-5 mb-8 mt-2 flex items-center gap-1 rounded-border-radius-full">
+            <div className="w-full bg-[#891B3F] py-3 px-5 mb-8 mt-2 flex items-center gap-1 rounded-border-radius-full">
               <IconHome size={24} className="text-colorStringBrandOnBgFill" />
               <p className="text-base font-semibold text-colorStringBrandOnBgFill">
                 Tailwind Polaris

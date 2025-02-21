@@ -115,22 +115,39 @@ const App = () => {
   return (
     <AppShell>
       <div className="max-w-5xl mx-auto">
-        <div className=" p-6  text-sm border-amber-800 bg-amber-200 hover:bg-amber-200 shadow-none drop-shadow-none sm:drop-shadow-none rounded-md sm:rounded-md">
-          <strong className="text-base text-amber-900">
-            Dashboard Template
-          </strong>
-          <br />
-          <div>
-            Use this template as a foundation to create a dashboard for your
-            project utilizing
-            <code className="text-xs ml-1 font-bold text-sky-900 border-b border-b-amber-800 border-dotted">
-              @dtewary/tw-polaris v{version}
-            </code>
-            . You can enhance and customize it further to meet your specific
-            requirements.
-          </div>
+      <div
+      className="relative rounded w-full flex items-center justify-between px-4 md:px-10 py-6 overflow-hidden bg-cover bg-center mb-8"
+      style={{
+        backgroundImage: `url('https://www.axisbank.com/images/default-source/revamp_new/grab-deals_new/grabbanner1tab.jpg')`,
+      }}
+    >
+      {/* Left Side Text Content */}
+      <div className="max-w-lg">
+        <h2 className="text-sm sm:text-lg md:text-3xl font-semibold text-gray-900">
+          Offers so good, <br /> everybody wants a piece.
+        </h2>
+        <p className="text-gray-700 mt-2 text-xs sm:text-sm">Grab them while you can!</p>
+        <button type="button" className="mt-4 px-4 py-1 bg-[#891B3F] text-white font-medium rounded">
+          Avail Now
+        </button>
+      </div>
+
+      {/* Image Section */}
+      <div className="relative flex justify-end">
+        <div className="relative">
+          {/* Background Shape */}
+          <div className="absolute inset-0 bg-[#C55A7A] w-[250px] h-[250px] -rotate-6 rounded-md"/>
+
+          
         </div>
-        <div className="flex flex-col gap-1 justify-start items-start w-full mb-2 mt-8">
+      </div>
+
+      
+    </div>
+  
+
+ 
+        <div className="flex flex-col gap-1 justify-start items-start w-full mb-2">
           <p className="font-semibold text-md">What every plan gets you?</p>
           {/* Features Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full">
@@ -162,9 +179,9 @@ const App = () => {
             ].map((item) => (
               <div
                 key={item.text}
-                className="group cursor-pointer flex flex-col items-start sm:flex-row sm:items-center gap-3 p-3 bg-colorBgSurface hover:bg-indigo-50 group  border border-colorBorder rounded-md active:shadow-shadow-button-inset active:translate-y-1 transition-all duration-100"
+                className="group cursor-pointer flex flex-col items-start sm:flex-row sm:items-center gap-3 p-3 bg-[#ffeee7] hover:bg-[#f8d8ca] group  border border-colorBorder rounded-md active:shadow-shadow-button-inset active:translate-y-1 transition-all duration-100"
               >
-                <div className="p-2 bg-gradient-to-r from-colorBgFillMagic to-colorBgFillEmphasis rounded-md group-active:rounded-xl group-active:shadow-shadow-inset-200 transition-all">
+                <div className="p-2 bg-[#891B3F] rounded-xl group-active:shadow-shadow-inset-200 transition-all">
                   {item.icon}
                 </div>
                 <span className="text-sm md:text-md font-semibold text-onBackground ">
@@ -180,7 +197,7 @@ const App = () => {
           {plans.map((plan) => (
             <Card key={plan.title} className="p-4 shadow-shadow-300 rounded-md">
               <CardHeader>
-                <CardTitle className="text-font-size-750 font-bold text-3xl text-indigo-600">
+                <CardTitle className="text-font-size-750 font-bold text-3xl text-[#891B3F]">
                   {plan.title}
                 </CardTitle>
                 <p className="text-font-size-350 text-colorStringSecondary">
@@ -203,7 +220,7 @@ const App = () => {
                 </div>
                 <button
                 type="button"
-                  className="group px-4 py-3 text-sm font-semibold my-2 rounded-lg bg-gradient-to-b from-neutral-800 to-neutral-800/85 hover:from-neutral-900 hover:to-neutral-900/85 border  border-neutral-900  text-neutral-100 shadow-shadow-bevel-100  active:shadow-shadow-button-primary-inset transition w-full drop-shadow"
+                  className="group bg-[#97144d] hover:bg-[#96294e] shadow-inner text-white w-full rounded py-3 px-3 my-3"
                   onClick={plan.buttonClick}
                 >
                   <p className="group-active:translate-y-[1.5px]">

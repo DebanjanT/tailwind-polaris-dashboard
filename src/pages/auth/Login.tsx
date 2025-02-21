@@ -52,12 +52,12 @@ const Login = () => {
     }
   };
   return (
-    <div className="grid place-items-center min-h-screen bg-gradient-to-r from-colorBgFillMagic to-colorBgFillSuccess p-2">
+    <div className="grid place-items-center min-h-screen grad-bg p-2">
       <div className="max-w-md mx-auto mt-10">
         <Card>
           <CardHeader>
-            <CardTitle className="flex justify-start items-center gap-1">
-              <DoorOpen /> Log In
+            <CardTitle className="flex justify-start items-center ">
+             <img src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-brand-logo.png" alt="logo" className="w-28 md:w-32 h-auto"/>
             </CardTitle>
             <CardDescription>
               {" "}
@@ -66,18 +66,10 @@ const Login = () => {
           </CardHeader>
           <CardContent>
             {/* Banner */}
-            <Banner
-              tone="success"
-              title="Join Us Today!"
-              inCard
-              icon={<Sparkles className="w-5 h-5" />}
-              extended={true}
-            >
-              <p>Use any valid E-mail & Password to login to dashboard!</p>
-            </Banner>
+            
 
             {/* Signup Form */}
-            <div className="mt-6 space-y-2" onSubmit={handleSubmit}>
+            <div className="space-y-2" onSubmit={handleSubmit}>
               <TextField
                 label="Email Address"
                 name="email"
@@ -99,25 +91,23 @@ const Login = () => {
                 error={errors.password}
               />
 
-              <Button
+              <button
                 onClick={handleSubmit}
-                variantType="primary"
                 style={{
                   marginTop: "1.5rem",
                 }}
-                className="w-full py-space-300"
+                className="flex justify-center items-center font-semibold bg-[#97144d] hover:bg-[#96294e] shadow-inner text-white w-full rounded py-3 px-3 my-3"
                 type="submit"
-                icon={<InspectIcon />}
               >
-                Log In
-              </Button>
+                <InspectIcon className="w-5 h-5 mr-2"/> Log In
+              </button>
             </div>
           </CardContent>
           <CardFooter className="flex justify-between text-sm">
-            <a href="www.google.com" className="text-colorStringLink hover:underline">
+            <a href="www.google.com" className="text-blue-600 hover:underline">
               Not registered? Sign up
             </a>
-            <a href="www.google.com" className="text-colorStringLink hover:underline">
+            <a href="www.google.com" className="text-blue-600 hover:underline">
               Forgot password?
             </a>
           </CardFooter>
