@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
-  
   Card,
   CardContent,
   CardDescription,
@@ -9,9 +8,9 @@ import {
   CardTitle,
   TextField,
 } from "@dtewary/tw-polaris";
-import {  InspectIcon } from "lucide-react";
+import { InspectIcon } from "lucide-react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -53,10 +52,20 @@ const Login = () => {
   return (
     <div className="grid place-items-center min-h-screen grad-bg p-2">
       <div className="max-w-md mx-auto mt-10">
+        <Link
+          to="/"
+          className="block text-white text-xs mt-3 font-semibold hover:underline mb-3"
+        >
+          ← Back to Home
+        </Link>
         <Card>
           <CardHeader>
             <CardTitle className="flex justify-start items-center ">
-             <img src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-brand-logo.png" alt="logo" className="w-28 md:w-32 h-auto"/>
+              <img
+                src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-brand-logo.png"
+                alt="logo"
+                className="w-28 md:w-32 h-auto"
+              />
             </CardTitle>
             <CardDescription>
               {" "}
@@ -65,7 +74,6 @@ const Login = () => {
           </CardHeader>
           <CardContent>
             {/* Banner */}
-            
 
             {/* Signup Form */}
             <div className="space-y-2" onSubmit={handleSubmit}>
@@ -98,7 +106,7 @@ const Login = () => {
                 className="flex justify-center items-center font-semibold bg-[#97144d] hover:bg-[#96294e] shadow-inner text-white w-full rounded py-3 px-3 my-3"
                 type="submit"
               >
-                <InspectIcon className="w-5 h-5 mr-2"/> Log In
+                <InspectIcon className="w-5 h-5 mr-2" /> Log In
               </button>
             </div>
           </CardContent>

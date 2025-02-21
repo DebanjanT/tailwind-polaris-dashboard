@@ -50,13 +50,13 @@ export default function AppShell({ children }: AppShellProps) {
       setActiveItem(item);
       setOpenSection(item.parent);
     },
-    []
+    [],
   );
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (!searchParams.get("email")) {
-      navigate("/");
+      navigate("/login");
     }
   }, []);
 
@@ -66,9 +66,11 @@ export default function AppShell({ children }: AppShellProps) {
         {/* Sidebar (Desktop) */}
         <aside className="hidden lg:block w-64 bg-[#891B3F]/10 overflow-y-auto">
           <div className="w-full bg-[#891B3F] py-5 px-5 mb-9 flex justify-center items-center gap-1">
-            
-            <img src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-white-logo.png" alt="logo" className="w-[6.6rem] h-auto"/>
-
+            <img
+              src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-white-logo.png"
+              alt="logo"
+              className="w-[6.6rem] h-auto"
+            />
           </div>
           <nav className="px-3 space-y-1 border-r border-neutral-500">
             <NavItem
@@ -142,8 +144,11 @@ export default function AppShell({ children }: AppShellProps) {
               <h1 className="text-xl font-bold mx-3 text-[#891B3F] hidden lg:block">
                 Dashboard
               </h1>
-              <img src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-white-logo.png" alt="logo" className="w-[6.6rem] h-auto ml-2 lg:hidden"/>
-
+              <img
+                src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-white-logo.png"
+                alt="logo"
+                className="w-[6.6rem] h-auto ml-2 lg:hidden"
+              />
             </div>
             <div className="flex items-center gap-3">
               {/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
@@ -152,7 +157,7 @@ export default function AppShell({ children }: AppShellProps) {
                 onClick={() => {
                   window.open(
                     "https://github.com/DebanjanT/tailwind-polaris-dashboard",
-                    "_blank"
+                    "_blank",
                   );
                 }}
               >
@@ -165,7 +170,8 @@ export default function AppShell({ children }: AppShellProps) {
                     <AvatarFallback className="bg-neutral-700 text-white">
                       {searchParams.get("email")
                         ? searchParams
-                            .get("email")?.substring(0, 2)
+                            .get("email")
+                            ?.substring(0, 2)
                             .toLocaleUpperCase()
                         : null}
                     </AvatarFallback>
