@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
+  Button,
   Card,
   CardContent,
   CardDescription,
@@ -98,16 +99,18 @@ const Login = () => {
                 error={errors.password}
               />
 
-              <button
+              <Button
                 onClick={handleSubmit}
                 style={{
                   marginTop: "1.5rem",
                 }}
-                className="flex justify-center items-center font-semibold bg-[#97144d] hover:bg-[#96294e] shadow-inner text-white w-full rounded py-2 px-3 my-3"
+                variantType="primary"
+                icon={<InspectIcon />}
+                className="w-full py-space-200"
                 type="submit"
               >
-                <InspectIcon className="w-5 h-5 mr-2" /> Log In
-              </button>
+                Log In{" "}
+              </Button>
             </div>
           </CardContent>
           <CardFooter className="flex justify-between text-sm">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaEye, FaCalendarAlt } from "react-icons/fa";
+import { FaCalendarAlt } from "react-icons/fa";
 import spinner from "../../assets/spinner.svg";
 import { format } from "date-fns";
 import {
@@ -7,8 +7,17 @@ import {
   PopoverTrigger,
   PopoverContent,
   Calendar,
+  Button,
+  RadixSelect,
+  RadixSelectTrigger,
+  RadixSelectValue,
+  RadixSelectContent,
+  RadixSelectGroup,
+  RadixSelectLabel,
+  RadixSelectItem,
 } from "@dtewary/tw-polaris";
 import { Link } from "react-router-dom";
+import { Eye } from "lucide-react";
 
 // Define the DateRange type
 type DateRange =
@@ -57,8 +66,6 @@ const invoices = [
 export default function InvoiceList() {
   const [selectedInvoice, setSelectedInvoice] = useState<string | null>(null);
   const [dateRange, setDateRange] = useState<DateRange>();
-  const [selectedCustomer, setSelectedCustomer] = useState("John Doe");
-  const [selectedLocation, setSelectedLocation] = useState("All Locations");
 
   const formatDate = (date: Date | undefined) => {
     if (!date) return "";
@@ -80,27 +87,36 @@ export default function InvoiceList() {
         {/* Filters */}
         <div className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0 mb-4">
           {/* Customer Select */}
-          <select
-            className="w-full p-1.5 border border-gray-300 rounded-md text-sm appearance-none disabled:opacity-50 disabled:bg-neutral-300 disabled:cursor-not-allowed"
-            value={selectedCustomer}
-            onChange={(e) => setSelectedCustomer(e.target.value)}
-          >
-            <option>John Doe</option>
-            <option>Jane Smith</option>
-          </select>
+
+          <RadixSelect>
+            <RadixSelectTrigger className="w-full">
+              <RadixSelectValue placeholder="Select Customer" />
+            </RadixSelectTrigger>
+            <RadixSelectContent position="item-aligned" className="w-full">
+              <RadixSelectGroup>
+                <RadixSelectLabel>Customers</RadixSelectLabel>
+                <RadixSelectItem value="j">John Doe</RadixSelectItem>
+                <RadixSelectItem value="banana">Bob Marley</RadixSelectItem>
+              </RadixSelectGroup>
+            </RadixSelectContent>
+          </RadixSelect>
 
           {/* Location Select */}
-          <select
-            className="w-full p-1.5 border border-gray-300 rounded-md text-sm appearance-none"
-            value={selectedLocation}
-            onChange={(e) => setSelectedLocation(e.target.value)}
-          >
-            <option>All Locations</option>
-            <option>Mumbai</option>
-            <option>Delhi</option>
-            <option>Bangalore</option>
-            <option>Chennai</option>
-          </select>
+
+          <RadixSelect>
+            <RadixSelectTrigger className="w-full truncate">
+              <RadixSelectValue placeholder="Select Destination" />
+            </RadixSelectTrigger>
+            <RadixSelectContent position="item-aligned" className="w-full">
+              <RadixSelectGroup>
+                <RadixSelectLabel>Store Locations</RadixSelectLabel>
+                <RadixSelectItem value="all">All Locations</RadixSelectItem>
+                <RadixSelectItem value="dlh">Delhi</RadixSelectItem>
+                <RadixSelectItem value="pun">Pune</RadixSelectItem>
+                <RadixSelectItem value="hdbd">Hydrabad</RadixSelectItem>
+              </RadixSelectGroup>
+            </RadixSelectContent>
+          </RadixSelect>
 
           {/* Date Range Picker */}
           <Popover>
@@ -156,24 +172,25 @@ export default function InvoiceList() {
                 </p>
               </div>
               <div className="flex flex-1 justify-end items-center">
-                <button
-                  className="bg-[#891B3F] text-white p-2 rounded-md text-xs flex items-center space-x-1 min-w-[80px] justify-center"
+                <Button
+                  variantType={invoice.loading ? "tertiary" : "primary"}
                   onClick={(e) => {
                     e.stopPropagation();
                     alert(`Viewing Invoice: ${invoice.id}`);
                   }}
+                  disabled={invoice.loading}
                 >
                   {invoice.loading ? (
                     <img
                       src={spinner}
-                      className="w-4 h-4 inline-block invert"
+                      className="w-4 h-4 inline-block mr-1"
                       alt="loading"
                     />
                   ) : (
-                    <FaEye className="text-white text-xs" />
+                    <Eye className="w-4 h-4 mr-1" />
                   )}
                   <span>{invoice.loading ? "Fetching" : "View"}</span>
-                </button>
+                </Button>
               </div>
             </div>
           ))}

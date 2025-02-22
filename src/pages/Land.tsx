@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { BorderTrail } from "../components/BorderTrail";
+import { version } from "@dtewary/tw-polaris";
 
 const routes = [
   { path: "/login", name: "Login Form 1" },
@@ -14,19 +15,22 @@ const routes = [
 export default function BlogPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen grad-bg p-4">
-      <div className="bg-white w-full md:w-[600px] p-4 rounded-lg shadow-md relative">
-        <BorderTrail className="bg-[#a3365a]" size={200} />
-
-        <img
-          src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-brand-logo.png"
-          alt="logo"
-          className="w-28 md:w-32 h-auto  mb-3 -ml-1"
-        />
-        <h2 className="text-base font-semibold text-gray-900 mb-3">
+      <div className="bg-white w-full md:w-[600px] p-4 rounded-lg shadow-md ">
+        <div className="flex items-center justify-start">
+          <img
+            src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-brand-logo.png"
+            alt="logo"
+            className="w-28 md:w-32 h-auto  mb-3 -ml-1"
+          />
+          <p className="text-sm text-gray-500 font-semibold">v{version}</p>
+        </div>
+        <h2 className="text-sm font-semibold text-gray-600 mb-1 mt-2">
           Available Component Routes
         </h2>
 
-        <div className="border rounded-md overflow-hidden">
+        <div className="border rounded-md overflow-hidden relative">
+          <BorderTrail className="bg-[#a3365a]" size={100} />
+
           {routes.map((route) => (
             <Link
               key={route.path}

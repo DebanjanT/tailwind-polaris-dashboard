@@ -2,13 +2,19 @@ import { useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
+import {
+  Button,
+  RadixSelectItem,
+  RadixSelectWithLabel,
+  TextField,
+} from "@dtewary/tw-polaris";
 
 export default function CompactNewCustomerForm() {
   const [signatoryCount, setSignatoryCount] = useState(0);
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 p-2">
-      <div className="bg-white p-4 rounded-lg shadow-md w-full md:w-3/4">
+      <div className="bg-white p-4 rounded-lg shadow-md w-full md:w-3/4 max-w-[55rem]">
         <img
           src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-brand-logo.png"
           alt="logo"
@@ -35,21 +41,17 @@ export default function CompactNewCustomerForm() {
         <div className="p-3 border border-gray-200 rounded-b-md text-sm">
           {/* Entity Name */}
           <div className="mb-2">
-            <label className="block font-medium">
-              Entity Name (GSTIN / Non-GSTIN)
-              <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Enter Entity Name"
-              className="w-full p-1.5 border border-gray-300 rounded-md text-sm"
+            <TextField
+              error="Enter Entity Name."
+              inputSize="small"
+              label="Entity Name (GSTIN / Non-GSTIN)"
+              placeholder="Enter branch name"
             />
-            <p className="text-red-500 text-xs mt-1">Enter Entity Name.</p>
           </div>
 
           {/* Constitution & Account Type */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2 w-full">
+            <div className="w-full">
               <label className="block font-medium">
                 Please Select the Constitution{" "}
                 <span className="text-red-500">*</span>
@@ -61,18 +63,16 @@ export default function CompactNewCustomerForm() {
                 <FaAngleDown className="absolute right-3 top-3 text-gray-500 text-xs" />
               </div>
             </div>
-            <div>
-              <label className="block font-medium">
-                Type of Account <span className="text-red-500">*</span>
-              </label>
-              <div className="relative">
-                <select className="w-full p-1.5 border border-gray-300 rounded-md text-sm appearance-none">
-                  <option>- SELECT TYPE OF ACCOUNT</option>
-                  <option>CURRENT A/C</option>
-                  <option>SAVINGS A/C</option>
-                </select>
-                <FaAngleDown className="absolute right-3 top-3 text-gray-500 text-xs" />
-              </div>
+            <div className=" w-full">
+              <RadixSelectWithLabel
+                label="Type Of Account"
+                selectPlaceholder="SELECT ACCOUNT TYPE"
+                triggerClassName="w-full"
+                contentClassName="w-full"
+              >
+                <RadixSelectItem value="hydrabad">CURRENT A/C</RadixSelectItem>
+                <RadixSelectItem value="pune">SAVINGS A/C</RadixSelectItem>
+              </RadixSelectWithLabel>
             </div>
           </div>
 
@@ -156,9 +156,12 @@ export default function CompactNewCustomerForm() {
 
           {/* Proceed Button */}
           <div className="flex justify-end mt-3">
-            <button className="bg-[#891B3F] text-white px-4 py-1.5 rounded-md flex items-center space-x-1 text-sm">
+            <Button
+              variantType="primary"
+              className="flex items-center space-x-1 text-sm"
+            >
               <span>PROCEED</span> <IoIosArrowForward />
-            </button>
+            </Button>
           </div>
         </div>
         <Link

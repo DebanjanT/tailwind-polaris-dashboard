@@ -1,5 +1,5 @@
-import { themes, twExtract } from "@dtewary/tw-polaris";
-
+import { themes, twExtract  } from "@dtewary/tw-polaris";
+import axisTheme from './src/theme'
 export default {
   content: [
     "./index.html",
@@ -10,7 +10,12 @@ export default {
     extend: {
       colors: {
         ...twExtract.transformColorClasses(
-          twExtract.reformattedColors(themes.light.color)
+          twExtract.reformattedColors(themes.light.color),
+
+        ),
+        ...twExtract.transformColorClasses(
+          twExtract.reformattedColors(axisTheme),
+
         ),
       },
       zIndex: {
@@ -20,6 +25,8 @@ export default {
       borderWidth: twExtract.borderWidth(themes.light.border),
       boxShadow: {
         ...themes.light.shadow,
+          "shadow-button-primary": "0rem -0.0625rem 0rem 0.0625rem rgba(111, 22, 51, 0.8) inset, 0rem 0rem 0rem 0.0625rem rgba(137, 27, 63, 1) inset, 0rem 0.03125rem 0rem 0.09375rem rgba(196, 141, 159, 0.25) inset;",
+                "shadow-button-primary-inset": "0rem 0.1875rem 0rem 0rem rgba(60, 10, 30, 1) inset"
       },
       fontSize: twExtract.fontSizes(themes.light.font),
       fontWeight: twExtract.fontWeights(themes.light.font),

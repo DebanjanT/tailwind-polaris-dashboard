@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@dtewary/tw-polaris": "^0.8.3",
+    "@dtewary/tw-polaris": "^0.8.4",
     "classnames": "^2.5.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.475.0",

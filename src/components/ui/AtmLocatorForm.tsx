@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 import "leaflet/dist/leaflet.css";
 import { Link } from "react-router-dom";
+import { Button } from "@dtewary/tw-polaris";
 
 export default function CompactBranchLocator() {
   const [selectedState, setSelectedState] = useState("Maharashtra");
@@ -139,9 +140,13 @@ export default function CompactBranchLocator() {
 
           {/* Buttons */}
           <div className="flex space-x-3 mt-4">
-            <button className="w-1/2 bg-[#891B3F] text-white py-2 rounded-md font-medium">
+            <Button
+              variantType="primary"
+              className="w-1/2 "
+              icon={<FaSearch />}
+            >
               Search
-            </button>
+            </Button>
             <button className="w-1/2 bg-gray-600 text-white py-2 rounded-md font-medium">
               Reset
             </button>

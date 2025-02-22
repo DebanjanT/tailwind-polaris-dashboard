@@ -169,10 +169,10 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@dtewary/tw-polaris@^0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@dtewary/tw-polaris/-/tw-polaris-0.8.3.tgz#9c40a616702b99d655c3aa5081f457f077c848ba"
-  integrity sha512-HrWygyF6w89jiU4udguS4/hWisGRd+uBxJLHNzy4ZKgxHI+wY1fqSRR7lwONh14Os4gGRzw1ULaDUp1AHJ+flw==
+"@dtewary/tw-polaris@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@dtewary/tw-polaris/-/tw-polaris-0.8.4.tgz#83156fb7d602b03b518173d15f8294389a5cfa6f"
+  integrity sha512-JPYAr38MSS2GV7ZjEI7M354ZxlkB8T8hS0PrXpk37kHANhqGvPHi3ZmparPUyyAvz2u/Su6SnhCwp0ui9DLIvg==
   dependencies:
     "@radix-ui/react-accordion" "^1.2.3"
     "@radix-ui/react-alert-dialog" "^1.0.0"
