@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { BorderTrail } from "../components/BorderTrail";
 import { version } from "@dtewary/tw-polaris";
+import DtLogoSvg from "../assets/logo";
 
 const routes = [
   { path: "/login", name: "Login Form 1" },
@@ -16,11 +17,11 @@ export default function BlogPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen grad-bg p-4">
       <div className="bg-white w-full md:w-[600px] p-4 rounded-lg shadow-md ">
-        <div className="flex items-center justify-start">
+        <div className="flex items-center justify-start mb-3">
           <img
             src="https://dtewary.blr1.digitaloceanspaces.com/logo/dtewary-brand-logo.png"
             alt="logo"
-            className="w-28 md:w-32 h-auto  mb-3 -ml-1"
+            className="w-28 md:w-32 h-auto -ml-1"
           />
           <p className="text-sm text-gray-500 font-semibold">v{version}</p>
         </div>

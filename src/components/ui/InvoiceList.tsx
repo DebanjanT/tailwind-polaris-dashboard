@@ -130,7 +130,7 @@ export default function InvoiceList() {
                 <FaCalendarAlt className="text-gray-500" />
               </button>
             </PopoverTrigger>
-            <PopoverContent className="p-0">
+            <PopoverContent className="p-0 rounded-md shadow-shadow-300 border sm:border border-gray-300">
               <Calendar
                 mode="range"
                 selected={dateRange}
