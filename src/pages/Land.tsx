@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { BorderTrail } from "../components/BorderTrail";
 import { version } from "@dtewary/tw-polaris";
-import DtLogoSvg from "../assets/logo";
 
 const routes = [
   { path: "/login", name: "Login Form 1" },
